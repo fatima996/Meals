@@ -1,0 +1,26 @@
+
+<div class="d-flex flex-wrap justify-content-around">
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ingredients</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let recipe of recipe$">
+          <tr *ngFor="let res of recipe.recipe.ingredients" >
+            <td >
+              {{res.text}}
+            </td>
+
+          </tr>
+          <tr>
+              <th scope="col">Health Value</th>
+        </tbody>
+      </table>
+
+  </div>
+
+
+

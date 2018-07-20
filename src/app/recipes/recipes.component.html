@@ -1,0 +1,34 @@
+<h1>recipes</h1>
+<form>
+    <div class="input-group mb-3">
+        <input
+        class="form-control"
+        placeholder="Search"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+       #search
+       (keyup.enter)="searchItem(search.value)"
+        >
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchItem(search.value)"><i class="material-icons">
+              search
+            </i></button>
+        </div>
+      </div>
+</form>
+<div class="d-flex flex-wrap justify-content-around">
+    <div class="card" *ngFor="let recipe of recipes$">
+      <img src="{{recipe.recipe.image}}"/>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">
+                <a routerLink="/details/{{recipe.recipe.label}}">{{ recipe.recipe.label }}
+              </a></li>
+              <li class="list-group-item">By: {{ recipe.recipe.source }}</li>
+              <li class="list-group-item"> Diet: {{ recipe.recipe.healthLabels}}</li>
+              </ul>
+    </div>
+  </div>
+
+
+
